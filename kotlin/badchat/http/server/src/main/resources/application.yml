@@ -1,0 +1,29 @@
+# Default profile (production)
+spring:
+  main:
+    web-application-type: reactive
+  flyway:
+    enabled: true
+server:
+  shutdown: graceful
+---
+
+# Development profile
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
+
+
+
+
